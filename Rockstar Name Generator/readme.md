@@ -10,7 +10,7 @@ Welcome to the **Rockstar Name Generator**! 🎸🔥 This fun and interactive Py
 ## How to Use
 1. Clone the repository:
    ```sh
-   git clone https://github.com/paintedman00/rockstar-name-generator.git
+   git clone https://github.com/paintedman00/python-practice
    ```
 2. Navigate to the project directory:
    ```sh
