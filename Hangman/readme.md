@@ -1,5 +1,5 @@
 
-```md
+
 # Hangman Game
 
 A Python-based Hangman game where players attempt to guess a randomly chosen word before running out of lives.
@@ -64,4 +64,3 @@ This project is open-source and available under the MIT License.
 ## Acknowledgments
 - Inspired by classic Hangman games.
 - ASCII art sourced from various open-source projects.
-```
