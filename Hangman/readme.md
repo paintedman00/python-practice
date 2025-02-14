@@ -21,7 +21,7 @@ A Python-based Hangman game where players attempt to guess a randomly chosen wor
    ```
 2. Navigate to the project directory:
    ```sh
-   cd hangman-game
+   cd hangman
    ```
 3. Ensure you have Python installed:
    ```sh
