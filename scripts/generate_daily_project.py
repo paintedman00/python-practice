@@ -1,16 +1,16 @@
 import datetime as dt
 import json
 import os
+import random
 import re
+import time
 from pathlib import Path
 
 import requests
+from requests import HTTPError
 
 
 def extract_json(text: str) -> dict:
-    """
-    Tries to parse JSON even if the model wraps it in extra text or code fences.
-    """
     text = text.strip()
 
     # Remove common fenced blocks if present
@@ -42,28 +42,74 @@ def extract_json(text: str) -> dict:
     raise ValueError("Could not extract a complete JSON object from model output.")
 
 
+def post_with_retry(url: str, *, params: dict, payload: dict, timeout: int = 90) -> dict:
+    """
+    Retries on 429/5xx with truncated exponential backoff + jitter.
+    """
+    session = requests.Session()
+
+    max_attempts = 8
+    base_delay = 5.0       # seconds
+    max_delay = 180.0      # seconds
+
+    last_error = None
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            r = session.post(url, params=params, json=payload, timeout=timeout)
+            if r.status_code == 429 or (500 <= r.status_code <= 599):
+                # Prefer Retry-After header if present
+                retry_after = r.headers.get("Retry-After")
+                if retry_after:
+                    try:
+                        delay = float(retry_after)
+                    except ValueError:
+                        delay = base_delay
+                else:
+                    # Exponential backoff with jitter
+                    delay = min(max_delay, base_delay * (2 ** (attempt - 1)))
+                    delay = delay * (0.7 + random.random() * 0.6)  # jitter 0.7x - 1.3x
+
+                print(
+                    f"HTTP {r.status_code} on attempt {attempt}/{max_attempts}. "
+                    f"Sleeping {delay:.1f}s then retrying..."
+                )
+                time.sleep(delay)
+                continue
+
+            r.raise_for_status()
+            return r.json()
+
+        except HTTPError as e:
+            last_error = e
+            # Non-retriable HTTP errors
+            raise
+        except (requests.Timeout, requests.ConnectionError) as e:
+            last_error = e
+            delay = min(max_delay, base_delay * (2 ** (attempt - 1)))
+            delay = delay * (0.7 + random.random() * 0.6)
+            print(
+                f"Network error on attempt {attempt}/{max_attempts}: {e}. "
+                f"Sleeping {delay:.1f}s then retrying..."
+            )
+            time.sleep(delay)
+
+    raise RuntimeError(f"Failed after {max_attempts} attempts. Last error: {last_error}")
+
+
 def gemini_generate_json(api_key: str, model: str, prompt: str) -> dict:
-    """
-    Calls Gemini generateContent (REST) and returns parsed JSON.
-    """
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     params = {"key": api_key}
+
     payload = {
-        "contents": [
-            {
-                "role": "user",
-                "parts": [{"text": prompt}],
-            }
-        ],
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.7,
-            "maxOutputTokens": 1200,
+            "temperature": 0.6,
+            "maxOutputTokens": 900,
         },
     }
 
-    r = requests.post(url, params=params, json=payload, timeout=90)
-    r.raise_for_status()
-    data = r.json()
+    data = post_with_retry(url, params=params, payload=payload, timeout=90)
 
     # Handle blocked prompts
     prompt_feedback = data.get("promptFeedback") or {}
@@ -76,7 +122,6 @@ def gemini_generate_json(api_key: str, model: str, prompt: str) -> dict:
 
     parts = (candidates[0].get("content") or {}).get("parts") or []
     text = "".join(p.get("text", "") for p in parts).strip()
-
     if not text:
         raise RuntimeError("Empty text returned from Gemini API.")
 
@@ -85,10 +130,16 @@ def gemini_generate_json(api_key: str, model: str, prompt: str) -> dict:
 
 def main() -> None:
     api_key = os.environ.get("GEMINI_API_KEY")
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+    model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash-001")
 
     if not api_key:
         raise SystemExit("Missing GEMINI_API_KEY. Add it as a GitHub Actions secret.")
+
+    # Random delay to avoid many users hitting the API at the same time
+    # Helps with free-tier per-minute rate limits.
+    jitter = random.randint(0, 120)
+    print(f"Initial jitter sleep: {jitter}s")
+    time.sleep(jitter)
 
     today = dt.date.today().isoformat()
     base_dir = Path("daily_projects") / today
