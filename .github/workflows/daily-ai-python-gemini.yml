@@ -5,6 +5,10 @@ on:
     - cron: "15 6 * * *" # daily 06:15 UTC
   workflow_dispatch:
 
+concurrency:
+  group: daily-ai-python-gemini
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -26,7 +30,8 @@ jobs:
       - name: Generate project with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-2.0-flash"
+          # Use a stable model name if possible. If this 404s for you, switch to "gemini-2.0-flash" or "gemini-2.0-flash-lite".
+          GEMINI_MODEL: "gemini-2.0-flash-001"
         run: |
           python scripts/generate_daily_project.py
 
