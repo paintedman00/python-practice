@@ -8,3 +8,4 @@
 - Simple To-Do List ([folder](./simple-to-do-list))
 - Simple Book Catalog ([folder](./simple-book-catalog))
 - Simple Dice Roller ([folder](./simple-dice-roller))
+- Simple Budget Tracker ([folder](./simple-budget-tracker))
