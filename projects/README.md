@@ -9,3 +9,4 @@
 - Simple Book Catalog ([folder](./simple-book-catalog))
 - Simple Dice Roller ([folder](./simple-dice-roller))
 - Simple Budget Tracker ([folder](./simple-budget-tracker))
+- Simple Grade Averager ([folder](./simple-grade-averager))
