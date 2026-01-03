@@ -11,3 +11,4 @@
 - Simple Budget Tracker ([folder](./simple-budget-tracker))
 - Simple Grade Averager ([folder](./simple-grade-averager))
 - Simple Contact Manager ([folder](./simple-contact-manager))
+- Simple Recipe Cost Calculator ([folder](./simple-recipe-cost-calculator))
