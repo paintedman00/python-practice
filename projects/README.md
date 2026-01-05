@@ -13,3 +13,4 @@
 - Simple Contact Manager ([folder](./simple-contact-manager))
 - Simple Recipe Cost Calculator ([folder](./simple-recipe-cost-calculator))
 - Simple Shopping List ([folder](./simple-shopping-list))
+- Simple Note Taker ([folder](./simple-note-taker))
