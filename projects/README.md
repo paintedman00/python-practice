@@ -14,3 +14,4 @@
 - Simple Recipe Cost Calculator ([folder](./simple-recipe-cost-calculator))
 - Simple Shopping List ([folder](./simple-shopping-list))
 - Simple Note Taker ([folder](./simple-note-taker))
+- Simple Temperature Converter ([folder](./simple-temperature-converter))
