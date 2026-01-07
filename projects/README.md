@@ -15,3 +15,4 @@
 - Simple Shopping List ([folder](./simple-shopping-list))
 - Simple Note Taker ([folder](./simple-note-taker))
 - Simple Temperature Converter ([folder](./simple-temperature-converter))
+- Simple Word Counter ([folder](./simple-word-counter))
