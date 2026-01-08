@@ -16,3 +16,4 @@
 - Simple Note Taker ([folder](./simple-note-taker))
 - Simple Temperature Converter ([folder](./simple-temperature-converter))
 - Simple Word Counter ([folder](./simple-word-counter))
+- Simple Tip Calculator ([folder](./simple-tip-calculator))
