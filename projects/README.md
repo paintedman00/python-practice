@@ -17,3 +17,4 @@
 - Simple Temperature Converter ([folder](./simple-temperature-converter))
 - Simple Word Counter ([folder](./simple-word-counter))
 - Simple Tip Calculator ([folder](./simple-tip-calculator))
+- Simple Quiz ([folder](./simple-quiz))
