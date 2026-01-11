@@ -19,3 +19,4 @@
 - Simple Tip Calculator ([folder](./simple-tip-calculator))
 - Simple Quiz ([folder](./simple-quiz))
 - Simple Alarm Clock ([folder](./simple-alarm-clock))
+- Simple Story Generator ([folder](./simple-story-generator))
