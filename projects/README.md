@@ -21,3 +21,4 @@
 - Simple Alarm Clock ([folder](./simple-alarm-clock))
 - Simple Story Generator ([folder](./simple-story-generator))
 - simple_unit_price_calculator ([folder](./simple-unit-price-calculator))
+- Simple Random Number Guessing Game ([folder](./simple-random-number-guessing-game))
