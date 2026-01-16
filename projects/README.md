@@ -24,3 +24,4 @@
 - Simple Random Number Guessing Game ([folder](./simple-random-number-guessing-game))
 - Simple Time Zone Converter ([folder](./simple-time-zone-converter))
 - CLI Unit Converter ([folder](./cli-unit-converter))
+- Simple Vowel Counter ([folder](./simple-vowel-counter))
