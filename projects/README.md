@@ -25,3 +25,4 @@
 - Simple Time Zone Converter ([folder](./simple-time-zone-converter))
 - CLI Unit Converter ([folder](./cli-unit-converter))
 - Simple Vowel Counter ([folder](./simple-vowel-counter))
+- Simple Name Generator ([folder](./simple-name-generator))
