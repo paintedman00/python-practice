@@ -26,3 +26,4 @@
 - CLI Unit Converter ([folder](./cli-unit-converter))
 - Simple Vowel Counter ([folder](./simple-vowel-counter))
 - Simple Name Generator ([folder](./simple-name-generator))
+- Simple Word Scrambler ([folder](./simple-word-scrambler))
