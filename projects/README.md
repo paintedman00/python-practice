@@ -27,3 +27,4 @@
 - Simple Vowel Counter ([folder](./simple-vowel-counter))
 - Simple Name Generator ([folder](./simple-name-generator))
 - Simple Word Scrambler ([folder](./simple-word-scrambler))
+- Simple Color Mixer ([folder](./simple-color-mixer))
