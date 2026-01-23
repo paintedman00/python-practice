@@ -31,3 +31,4 @@
 - Simple Text Analyzer ([folder](./simple-text-analyzer))
 - Simple Mad Libs Generator ([folder](./simple-mad-libs-generator))
 - Simple Age Calculator ([folder](./simple-age-calculator))
+- Simple Palindrome Checker ([folder](./simple-palindrome-checker))
