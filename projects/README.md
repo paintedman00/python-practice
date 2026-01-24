@@ -32,3 +32,4 @@
 - Simple Mad Libs Generator ([folder](./simple-mad-libs-generator))
 - Simple Age Calculator ([folder](./simple-age-calculator))
 - Simple Palindrome Checker ([folder](./simple-palindrome-checker))
+- Basic Password Generator ([folder](./basic-password-generator))
