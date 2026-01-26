@@ -34,3 +34,4 @@
 - Simple Palindrome Checker ([folder](./simple-palindrome-checker))
 - Basic Password Generator ([folder](./basic-password-generator))
 - Simple Password Generator ([folder](./simple-password-generator))
+- Simple Task Timer ([folder](./simple-task-timer))
