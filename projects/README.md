@@ -35,3 +35,4 @@
 - Basic Password Generator ([folder](./basic-password-generator))
 - Simple Password Generator ([folder](./simple-password-generator))
 - Simple Task Timer ([folder](./simple-task-timer))
+- CLI Unit Converter ([folder](./cli-unit-converter-2))
