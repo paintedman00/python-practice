@@ -37,3 +37,4 @@
 - Simple Task Timer ([folder](./simple-task-timer))
 - CLI Unit Converter ([folder](./cli-unit-converter-2))
 - Simple Inventory Manager ([folder](./simple-inventory-manager))
+- Simple Event Countdown ([folder](./simple-event-countdown))
