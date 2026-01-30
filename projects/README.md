@@ -38,3 +38,4 @@
 - CLI Unit Converter ([folder](./cli-unit-converter-2))
 - Simple Inventory Manager ([folder](./simple-inventory-manager))
 - Simple Event Countdown ([folder](./simple-event-countdown))
+- Simple Travel Packing List ([folder](./simple-travel-packing-list))
