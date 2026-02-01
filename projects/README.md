@@ -40,3 +40,4 @@
 - Simple Event Countdown ([folder](./simple-event-countdown))
 - Simple Travel Packing List ([folder](./simple-travel-packing-list))
 - Simple Book Catalog ([folder](./simple-book-catalog-2))
+- Simple Book Catalog ([folder](./simple-book-catalog-3))
