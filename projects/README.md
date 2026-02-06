@@ -45,3 +45,4 @@
 - Simple Book Catalog ([folder](./simple-book-catalog-4))
 - Simple Alarm Clock ([folder](./simple-alarm-clock-3))
 - Simple Book Tracker ([folder](./simple-book-tracker))
+- Simple Book Log ([folder](./simple-book-log))
