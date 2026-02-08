@@ -47,3 +47,4 @@
 - Simple Book Tracker ([folder](./simple-book-tracker))
 - Simple Book Log ([folder](./simple-book-log))
 - Simple Book Catalog ([folder](./simple-book-catalog-5))
+- Simple Book Catalog ([folder](./simple-book-catalog-6))
