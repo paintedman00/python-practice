@@ -50,3 +50,4 @@
 - Simple Book Catalog ([folder](./simple-book-catalog-6))
 - Simple Age Calculator ([folder](./simple-age-calculator-2))
 - Simple Book Catalog ([folder](./simple-book-catalog-7))
+- Simple Book Catalog ([folder](./simple-book-catalog-8))
