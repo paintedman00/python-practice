@@ -39,3 +39,4 @@
 - Simple Travel Packing List ([folder](./simple-travel-packing-list))
 - Simple Book Tracker ([folder](./simple-book-tracker))
 - Simple Book Log ([folder](./simple-book-log))
+- Simple Loan Calculator ([folder](./simple-loan-calculator))
